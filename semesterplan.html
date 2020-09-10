@@ -493,7 +493,7 @@
                 set startDate(date) {
                     if (date instanceof Date) {
                         this._startDate = new Date(date);
-                        this.fixDates();
+                        //this.fixDates();
                     }
                 }
 
@@ -504,7 +504,7 @@
                 set endDate(date) {
                     if (date instanceof Date) {
                         this._endDate = new Date(date); 
-                        this.fixDates();
+                        //this.fixDates();
                     }
                 }
 
@@ -540,9 +540,11 @@
                 fixDates() {
                     if (this.startDate instanceof Date && this.endDate instanceof Date) {
                         if (this.startDate.valueOf() > this.endDate.valueOf()) {
-                            var temp = new Date(this.startDate);
-                            this.startDate = this.endDate;
-                            this.endDate = temp;
+                            var tempTimestamp = this.startDate.valueOf();
+                            this.startDate = new Date(this.endDate.valueOf());
+                            this.endDate = new Date(tempTimestamp);
+                        }else if(this.startDate.valueOf() == this.endDate.valueOf()){
+                            this.endDate.setMinutes(this.endDate.getMinutes() + 1);
                         }
                     }
                 }
