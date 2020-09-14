@@ -36,6 +36,40 @@
             }
 
 
+            /* Nav */
+
+            nav button{
+                padding: .25em;
+            }
+
+            nav button:nth-of-type(3)::first-letter{
+                color: transparent;
+                text-shadow: 0 0 0 #ff5000, 
+                1px 1px 0 #000, 
+                1px -1px 0 #000, 
+                -1px 1px 0 #000, 
+                -1px -1px 0 #000, 
+                1px 0px 0 #000, 
+                0px 1px 0 #000, 
+                -1px 0px 0 #000, 
+                0px -1px 0 #000, 
+                0 0 0 #000;
+
+            }
+
+            #helpButton{
+                color: #003767;
+                font-weight:bold;
+                box-shadow: 0px 0px 3px 1px #00b2ce;
+            }
+            #helpButton:hover, #helpButton:active{
+                color: #ff5000;
+                font-weight:bold;
+                box-shadow: 0px 0px 3px 1px #ff5000;
+            }
+
+
+
             /* Header */
 
             #inputSemesterName{
@@ -244,7 +278,9 @@
 
             #divHelp div{
                 font-size: 1.5rem;
-                width: 550px;
+                width: 80%;
+                max-height:90%;
+                overflow: auto; /* Enable scroll if needed */
                 padding: 1rem;
                 margin: 0;
                 position: absolute;
@@ -262,6 +298,9 @@
                 font-size: 1.5rem;
                 padding: .25rem;
                 margin: .25rem;
+            }
+            #divHelp p ul, #divHelp p li{
+                width: 90%;
             }
 
 
@@ -371,13 +410,13 @@
 
         <!-- save, reset, print -->
         <nav class="card hideForPrint">
-            <button onclick="newSemester()" title="Delete the current Semester Plan and start a new plan">New Semester</button>
-            <button onclick="addCourse()" title="Add a new blank Course to the Semester Plan">Add Course</button>
-            <button onclick="showAddEvaluationPopup()" title="Add a new Evaluation to the Semester Plan">Add Evaluation...</button>
-            <button onclick="saveSemester()" title="Save a copy of the current Semester Plan">Save As...</button> 
-            <button onclick="window.location.reload()" title="Revert to last saved version of Semester Plan">Cancel</button>
-            <button onclick="printPage()" title="Print this Semester Plan">Print...</button>
-            <button onclick="showHelp()" title="Display the help documentation">Help</button>
+            <button onclick="newSemester()" title="Delete the current Semester Plan and start a new plan">🆕New Semester</button>
+            <button onclick="addCourse()" title="Add a new blank Course to the Semester Plan">➕Add Course</button>
+            <button onclick="showAddEvaluationPopup()" title="Add a new Evaluation to the Semester Plan">➕ Add Evaluation...</button>
+            <button onclick="saveSemester()" title="Save a copy of the current Semester Plan">💾Save As...</button> 
+            <button onclick="window.location.reload()" title="Revert to last saved version of Semester Plan">⭕Cancel</button>
+            <button onclick="printPage()" title="Print this Semester Plan">📄Print...</button>
+            <button onclick="showHelp()" title="Display the help documentation" id="helpButton">🙋‍♂️First time? Click me!</button>
             <!-- <button onclick="updateView()">force view refresh</button>
             <button onclick="updateData()">force save data</button> -->
         </nav> 
@@ -403,8 +442,76 @@
         <!-- Help documentation popup -->
         <div id="divHelp">
             <div>
-                <p>HELP DOCUMENTATION</p>
-                <p></p>
+                <h2>Step by Step Instructions For Online Semester Planner </h2>
+                
+                <p>
+                    Name the Semester (Fall, Winter, Spring and Year) 
+                    <img src="https://desirecampbell.github.io/SemesterPlan/help01.jpg" alt="">
+                </p>
+
+                <hr>
+                
+                <p>
+                    Set Semester Plan Date Range
+                    <ul>
+                        <li>Use 1st dropdown menu to set the 1st Monday of the semester</li>
+                        <li>Use the 2nd dropdown menu to set 1st Monday of reading week</li>
+                        <li>Use the 3rd dropdown to identify the last day of semester </li>
+                    </ul>
+                    Should produce 13/14 Week Semester
+                </p>
+
+                <hr>
+
+                <p>Click on the Gray Plus to add the number of courses you are taking for the semester </p>
+
+                <hr>
+
+                <p>Replace Course # with name of your courses
+                    <ul>
+                        <li>Feel free to use short form names</li>
+                        <li>May be helpful to start with the first course of the week and so on</li>
+                    </ul>
+                </p>
+
+                <hr>
+
+                <p>Work with your Class Plans and/or Topical outlines (Posted on Slate) to confirm each course’s due dates</p>
+
+                <hr>
+
+                <p>
+                    <ul>
+                        <li>From the 1st drop-down menu, select the course name</li>
+                        <li>From next drop-down menu, select the evaluation type (assignment, test, presentation, etc.)</li>
+                        <li>Select the date the evaluation is due</li>
+                        <li>Slide gauge or type in the evaluation worth</li>
+                    </ul>
+                    Can use last section if you want to add a small note (Group work, etc.) 
+                </p>
+
+                <hr>
+
+                <p>
+                    <ul>
+                        <li>Click save and it will populate the semester plan automatically colour-coded by evaluation type </li>
+                        <li>Continue with this process until you have documented 100% of the evaluation for each course. </li>
+                    </ul>
+                </p>
+
+                <hr>
+
+                <p>There a course notes section at the top of every course to take document evaluations that are less than 3% and or to write notes like “clarify with instructor” etc.</p>
+
+                <hr>
+
+                <p>Save your Semester Plan by using the “Save As” button. The semester plan may download automatically to your downloads folder. Locate it there and save to your preferred location if you want to update it in the future. You can also click “Print” to print to Paper or PDF. </p>
+
+                <hr>
+
+                <p><em>Use your semester plan to forecast busy/high demand weeks and break your tasks up over time. From here you would start a weekly study plan.</em></p>
+
+
             </div>
         </div>
 
@@ -424,7 +531,7 @@
         </footer>
         <div class="version">
             <!-- version number - helpful for troubleshooting -->
-            v 2.4 -- 10 September 2020
+            v 2.5 -- 14 September 2020
             <a href="https://desirecampbell.github.io/SemesterPlan/semesterplan.html">https://desirecampbell.github.io/SemesterPlan/semesterplan.html</a>
         </div>
 
