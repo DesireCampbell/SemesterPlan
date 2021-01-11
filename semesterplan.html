@@ -544,7 +544,7 @@
         </footer>
         <div class="version">
             <!-- version number - helpful for troubleshooting -->
-            v 2.5 -- 14 September 2020
+            v 2.6 -- 11 Jan 2021
             <a href="https://desirecampbell.github.io/SemesterPlan/semesterplan.html">https://desirecampbell.github.io/SemesterPlan/semesterplan.html</a>
         </div>
 
@@ -1202,8 +1202,9 @@
                 //alert user
                 var warningText = 'Are you sure you want to delete all Semester information? (There is no undo!)';
                 if (bypassPrompt || confirm(warningText)) {
-                    //create new semester object
-                    semester = new SemesterPlan('', new Date(1600056000000), new Date(1608267600000), new Date(1603684800000));
+                    //create new semester object with default start end reading week dates
+                    //semester = new SemesterPlan('', new Date(1600056000000), new Date(1608267600000), new Date(1603684800000)); //Fall 2020
+                    semester = new SemesterPlan('', new Date(1610942400000), new Date(1619150400000), new Date(1614571200000)); //Winter 2021
                     addCourse(); //add one blank course
                 } 
             }
