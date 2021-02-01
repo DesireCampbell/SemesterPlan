@@ -544,7 +544,7 @@
         </footer>
         <div class="version">
             <!-- version number - helpful for troubleshooting -->
-            v 2.6 -- 11 Jan 2021
+            v 2.7 -- 1 Feb 2021
             <a href="https://desirecampbell.github.io/SemesterPlan/semesterplan.html">https://desirecampbell.github.io/SemesterPlan/semesterplan.html</a>
         </div>
 
@@ -642,7 +642,9 @@
                 }
 
                 get readingWeek() {
-                    return this._readingWeek;
+                    /* Display doesn't catch Reading Week if it's not a 
+                    Monday, so ensure that this date is a Monday */
+                    return getThisMonday(this._readingWeek);
                 }
 
                 set note(newNote) {
