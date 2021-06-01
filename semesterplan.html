@@ -531,7 +531,7 @@
         <footer class="card hideForPrint">
             <div class="gridContainer">
                 <div>
-                    <a href="https://www.sheridancollege.ca/">Sheridan College</a> 
+                    <a href="https://www.sheridancollege.ca/">Sheridan College</a> / 
                     <a href="https://www.sheridancollege.ca/life-at-sheridan/student-services/accessible-learning-services">Accessible Learning</a> <br>
                     ✉ Email: <a href="mailto:askanadvisor@sheridancollege.ca">askanadvisor@sheridancollege.ca</a>
                 </div>
@@ -544,8 +544,9 @@
         </footer>
         <div class="version">
             <!-- version number - helpful for troubleshooting -->
-            v 2.7 -- 1 Feb 2021
-            <a href="https://desirecampbell.github.io/SemesterPlan/semesterplan.html">https://desirecampbell.github.io/SemesterPlan/semesterplan.html</a>
+            v 2.8 -- 1 June 2021 <br>
+            Live version of page: <a href="https://desirecampbell.github.io/SemesterPlan/semesterplan.html">https://desirecampbell.github.io/SemesterPlan/semesterplan.html</a> <br>
+						GitHub repository: <a href="https://github.com/DesireCampbell/SemesterPlan">https://github.com/DesireCampbell/SemesterPlan</a>
         </div>
 
 
@@ -1612,26 +1613,26 @@
 
                 //generate semester initialization from current semester obj ///
                 var savedSemesterCode = '\n'; //newline
-                savedSemesterCode += 'semester = new SemesterPlan("'+ semester.name +'", ';
+                savedSemesterCode += 'semester = new SemesterPlan(`'+ semester.name +'`, ';
                 savedSemesterCode += 'new Date('+ semester.startDate.valueOf() +'), ';
                 savedSemesterCode += 'new Date('+ semester.endDate.valueOf() +'), ';
                 savedSemesterCode += 'new Date('+ semester.readingWeek.valueOf() +')';
                 savedSemesterCode += ');';
                 savedSemesterCode += '\n'; //newline
-                savedSemesterCode += 'semester.note = "'+ semester.note +'";'; 
+                savedSemesterCode += 'semester.note = `'+ semester.note +'`;'; 
                 savedSemesterCode += '\n'; //newline
                 for (let cIndex = 0; cIndex < semester.courses.length; cIndex++) {
-                    savedSemesterCode += 'semester.courses.push(new Course("'+ semester.courses[cIndex].name +'", "'+ semester.courses[cIndex].code +'"));';
+                    savedSemesterCode += 'semester.courses.push(new Course(`'+ semester.courses[cIndex].name +'`, `'+ semester.courses[cIndex].code +'`));';
                     savedSemesterCode += '\n'; //newline
-                    savedSemesterCode += 'semester.courses['+ cIndex +'].note = "'+ semester.courses[cIndex].note +'";';
+                    savedSemesterCode += 'semester.courses['+ cIndex +'].note = `'+ semester.courses[cIndex].note +'`;';
                     savedSemesterCode += '\n'; //newline
                     for (let eIndex = 0; eIndex < semester.courses[cIndex].evaluations.length; eIndex++) {
-                        savedSemesterCode += '    semester.courses['+ cIndex +'].evaluations.push(new Evaluation("'+ semester.courses[cIndex].evaluations[eIndex].name +'", "';
-                        savedSemesterCode += semester.courses[cIndex].evaluations[eIndex].type +'", ';
+                        savedSemesterCode += '    semester.courses['+ cIndex +'].evaluations.push(new Evaluation(`'+ semester.courses[cIndex].evaluations[eIndex].name +'`, `';
+                        savedSemesterCode += semester.courses[cIndex].evaluations[eIndex].type +'`, ';
                         savedSemesterCode += 'new Date('+ semester.courses[cIndex].evaluations[eIndex].dueDate.valueOf() +'), ';
                         savedSemesterCode +=  semester.courses[cIndex].evaluations[eIndex].gradeValue +')';
                         savedSemesterCode += '); ';
-                        savedSemesterCode += 'semester.courses['+ cIndex +'].evaluations['+ eIndex +'].note = "'+ semester.courses[cIndex].evaluations[eIndex].note +'";';
+                        savedSemesterCode += 'semester.courses['+ cIndex +'].evaluations['+ eIndex +'].note = `'+ semester.courses[cIndex].evaluations[eIndex].note +'`;';
                         savedSemesterCode += '\n'; //newline
                     }
                     savedSemesterCode += '\n'; //newline
