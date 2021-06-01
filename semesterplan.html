@@ -176,11 +176,12 @@
             .buttonEdit:hover, .buttonDelete:hover { filter: grayscale(0%); }
 
 
-            .type0{ background: rgb(62, 158, 221); }
-            .type1{ background: #C80; }
-            .type2{ background: #0C0; }
-            .type3{ background: #80C; }
-            .type4{ background: rgb(233, 98, 226); }
+            .type0{ background: hsl(204, 70%, 55%); }
+            .type1{ background: hsl(40, 100%, 40%); }
+            .type2{ background: hsl(120, 100%, 40%); }
+            .type3{ background: hsl(280, 100%, 40%); }
+            .type4{ background: hsl(303, 75%, 65%); }
+						.type5{ background: hsl(142, 26%, 59%); }
 
             
 
@@ -346,9 +347,7 @@
 
 
 
-            footer{
-                
-            }
+            
             footer div.gridContainer{
                 min-width: 300px;
                 max-width: 850px;
@@ -544,7 +543,7 @@
         </footer>
         <div class="version">
             <!-- version number - helpful for troubleshooting -->
-            v 2.8 -- 1 June 2021 <br>
+            v 2.8.1 -- 1 June 2021 <br>
             Live version of page: <a href="https://desirecampbell.github.io/SemesterPlan/semesterplan.html">https://desirecampbell.github.io/SemesterPlan/semesterplan.html</a> <br>
 						GitHub repository: <a href="https://github.com/DesireCampbell/SemesterPlan">https://github.com/DesireCampbell/SemesterPlan</a>
         </div>
@@ -730,7 +729,7 @@
                 }
 
                 static get TYPES() {
-                    return ["assignment", "test / exam", "presentation", "in-class activity", "lab"];
+                    return ["assignment", "test / exam", "presentation", "in-class activity", "lab", "reading"];
                 }
 
                 set type(type){
