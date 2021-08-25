@@ -543,7 +543,7 @@
         </footer>
         <div class="version">
             <!-- version number - helpful for troubleshooting -->
-            v 2.8.1 -- 1 June 2021 <br>
+            v 2.8.2 -- 25 Aug 2021 <br>
             Live version of page: <a href="https://desirecampbell.github.io/SemesterPlan/semesterplan.html">https://desirecampbell.github.io/SemesterPlan/semesterplan.html</a> <br>
 						GitHub repository: <a href="https://github.com/DesireCampbell/SemesterPlan">https://github.com/DesireCampbell/SemesterPlan</a>
         </div>
@@ -1206,7 +1206,9 @@
                 if (bypassPrompt || confirm(warningText)) {
                     //create new semester object with default start end reading week dates
                     //semester = new SemesterPlan('', new Date(1600056000000), new Date(1608267600000), new Date(1603684800000)); //Fall 2020
-                    semester = new SemesterPlan('', new Date(1610942400000), new Date(1619150400000), new Date(1614571200000)); //Winter 2021
+                    //semester = new SemesterPlan('', new Date(1610942400000), new Date(1619150400000), new Date(1614571200000)); //Winter 2021
+                    semester = new SemesterPlan('', new Date(1631034000000), new Date(1639764000000), new Date(1635181200000)); //Fall 2021
+                    //todo: calculate start of semester? 
                     addCourse(); //add one blank course
                 } 
             }
